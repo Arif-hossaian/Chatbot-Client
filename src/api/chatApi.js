@@ -1,9 +1,9 @@
-import { SERVER_DOWN_MESSAGE } from './http';
+import { SERVER_DOWN_MESSAGE, apiUrl } from './http';
 
 async function request(url, body, signal) {
   let response;
   try {
-    response = await fetch(url, {
+    response = await fetch(apiUrl(url), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
